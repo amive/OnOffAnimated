@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On/Off</title>
+    <link rel="stylesheet" href="OnOff.css" />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.5.1/css/all.css"
+    />
+  </head>
+  <body>
+    <svg id="face" width="200" height="200" viewBox="0 0 100 100">
+      <!-- Face circle -->
+      <circle
+        cx="25"
+        cy="25"
+        r="22.5"
+        fill="yellow"
+        stroke="black"
+        stroke-width="1"
+      />
+      <!-- Eyes -->
+      <circle cx="17.5" cy="20" r="2.5" fill="black" />
+      <circle cx="32.5" cy="20" r="2.5" fill="black" />
+      <!-- Mouth with animation -->
+      <path
+        id="mouth"
+        d="M15,32.5 Q25,42.5 35,32.5"
+        fill="none"
+        stroke="black"
+        stroke-width="1.5"
+        stroke-linecap="round"
+      >
+        <animate
+          attributeName="d"
+          dur="0.3s"
+          fill="freeze"
+          id="toSmile"
+          to="M15,32.5 Q25,42.5 35,32.5"
+        />
+        <animate
+          attributeName="d"
+          dur="0.3s"
+          fill="freeze"
+          id="toFrown"
+          to="M15,32.5 Q25,22.5 35,32.5"
+        />
+      </path>
+    </svg>
+    <div id="button">
+      <div id="buttonContainer">
+        <div id="buttonSwitch"></div>
+      </div>
+    </div>
+    <footer id="footer">
+      <a
+        href="https://github.com/amive"
+        target="_blank"
+        style="text-decoration: none"
+        ><i class="fab fa-github"></i> amine</a
+      >
+    </footer>
+    <script src="OnOff.js"></script>
+  </body>
+</html>

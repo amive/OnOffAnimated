@@ -1,0 +1,95 @@
+body {
+  background-color: black;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  user-select: none;
+  touch-action: manipulation;
+}
+#face {
+  width: fit-content;
+  position: relative;
+  left: 47.5%;
+  top: 50vh;
+}
+#button {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  top: 60vh;
+}
+#buttonContainer {
+  width: 120.6px;
+  height: 51px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-image: url("assets/SunMoon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#buttonSwitch {
+  border: 1px solid black;
+  width: 60px;
+  height: 50px;
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 9px;
+  background-color: #505050;
+  position: relative;
+  right: 1px;
+  top: -0.4px;
+  transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 1.2em;
+  font-weight: 700;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #000000;
+  text-shadow: #000000;
+  letter-spacing: 2px;
+  z-index: 10001;
+  animation: footerGlowPulse 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.fab {
+  bottom: -2px;
+  position: relative;
+}
+@keyframes footerGlowPulse {
+  0% {
+    color: #222;
+    text-shadow: 0 2px 8px rgba(255, 215, 0, 0.15);
+    font-size: 1.2em;
+  }
+  50% {
+    color: #fffbe7;
+    text-shadow: 0 4px 32px #ab66ff, 0 0 64px #b300ff;
+    font-size: 1.2em;
+  }
+
+  100% {
+    color: #222;
+    text-shadow: 0 2px 8px rgba(255, 215, 0, 0.15);
+    font-size: 1.2em;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    overflow: hidden;
+    user-select: none;
+    touch-action: manipulation;
+  }
+  #button {
+    position: relative;
+    top: 50vh;
+  }
+  #face {
+    position: relative;
+    left: 35vw;
+  }
+}
