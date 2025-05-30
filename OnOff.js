@@ -4,7 +4,6 @@ let body = document.body;
 let audio = new Audio("assets/click.wav");
 let isClickable = true;
 let Status = 1;
-  setTimeout(() => {
 button.addEventListener("click", (toggle) => {
   if (!buttonContainer.contains(toggle.target)) return;
   if (!isClickable) return;
@@ -33,7 +32,7 @@ button.addEventListener("click", (toggle) => {
     Status = 0;
     console.log("on");
   }
-
+  setTimeout(() => {
     isClickable = true;
-});
     }, 400);
+});
