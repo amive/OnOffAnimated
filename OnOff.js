@@ -8,7 +8,9 @@ button.addEventListener("click", (toggle) => {
   if (!buttonContainer.contains(toggle.target)) return;
   if (!isClickable) return;
   isClickable = false;
-  audio.play();
+  setTimeout(() => {
+    audio.play();
+    }, 400);
   if (Status === 0) {
     buttonSwitch.style.right = 1 + "px";
     buttonSwitch.style.backgroundColor = "#505050";
