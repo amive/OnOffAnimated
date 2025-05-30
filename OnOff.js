@@ -4,13 +4,12 @@ let body = document.body;
 let audio = new Audio("assets/click.wav");
 let isClickable = true;
 let Status = 1;
+  setTimeout(() => {
 button.addEventListener("click", (toggle) => {
   if (!buttonContainer.contains(toggle.target)) return;
   if (!isClickable) return;
   isClickable = false;
-  setTimeout(() => {
-    audio.play();
-    }, 400);
+  audio.play();
   if (Status === 0) {
     buttonSwitch.style.right = 1 + "px";
     buttonSwitch.style.backgroundColor = "#505050";
@@ -35,7 +34,6 @@ button.addEventListener("click", (toggle) => {
     console.log("on");
   }
 
-  setTimeout(() => {
     isClickable = true;
-  }, 400);
 });
+    }, 400);
