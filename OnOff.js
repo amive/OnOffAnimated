@@ -53,5 +53,5 @@ button.addEventListener("click", (toggle) => {
   }
   setTimeout(() => {
     isClickable = true;
-    },1000);
+    },750);
 });
