@@ -5,7 +5,6 @@ let isClickable = true;
 let Status = 1;
 button.addEventListener("click", (toggle) => {
   if (!buttonContainer.contains(toggle.target)) return;
-  if (!isClickable) return;
   isClickable = false;
   new Audio("assets/click.wav").play();
   if (Status === 0) {
