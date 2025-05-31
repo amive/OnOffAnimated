@@ -3,6 +3,7 @@ let buttonSwitch = document.getElementById("buttonSwitch");
 let body = document.body;
 const audioTemplate = new Audio("assets/click.wav");
 audioTemplate.preload = "auto";
+let isClickable = true;
 function playClickSound() {
   const audioClone = audioTemplate.cloneNode();
   audioClone.play();
@@ -10,6 +11,8 @@ function playClickSound() {
 let Status = 1;
 button.addEventListener("click", (toggle) => {
   if (!buttonContainer.contains(toggle.target)) return;
+  if (!isClickable) return;
+  isClickable = false;
   playClickSound();
   if (Status === 0) {
     buttonSwitch.style.right = 1 + "px";
@@ -34,4 +37,7 @@ button.addEventListener("click", (toggle) => {
     Status = 0;
     console.log("on");
   }
+  setInterval((){
+    isClickable = true;
+    },400);
 });
