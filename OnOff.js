@@ -37,7 +37,7 @@ button.addEventListener("click", (toggle) => {
     Status = 0;
     console.log("on");
   }
-  setInterval((){
+  setInterval(() => {
     isClickable = true;
     },400);
 });
