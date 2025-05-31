@@ -1,12 +1,16 @@
 let button = document.getElementById("button");
 let buttonSwitch = document.getElementById("buttonSwitch");
 let body = document.body;
-let isClickable = true;
+const audioTemplate = new Audio("assets/click.wav");
+audioTemplate.preload = "auto";
+function playClickSound() {
+  const audioClone = audioTemplate.cloneNode();
+  audioClone.play();
+}
 let Status = 1;
 button.addEventListener("click", (toggle) => {
   if (!buttonContainer.contains(toggle.target)) return;
-  isClickable = false;
-  new Audio("assets/click.wav").play();
+  playClickSound();
   if (Status === 0) {
     buttonSwitch.style.right = 1 + "px";
     buttonSwitch.style.backgroundColor = "#505050";
@@ -30,7 +34,4 @@ button.addEventListener("click", (toggle) => {
     Status = 0;
     console.log("on");
   }
-  setTimeout(() => {
-    isClickable = true;
-    }, 400);
 });
