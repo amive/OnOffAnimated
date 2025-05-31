@@ -1,7 +1,6 @@
 let button = document.getElementById("button");
 let buttonSwitch = document.getElementById("buttonSwitch");
 let body = document.body;
-let audio = new Audio("assets/click.wav");
 let isClickable = true;
 let Status = 1;
 button.addEventListener("click", (toggle) => {
